@@ -7,10 +7,10 @@ export default async function Home({ searchParams }: any) {
   const { manufacturer, year, fuel, model } = await searchParams;
 
   const { data: allCars, error } = await fetchCars({
-    manufacturer: manufacturer || "",
+    manufacturer: manufacturer || "Volkswagen",
     year: year || 2022,
     fuel: fuel || "",
-    model: model || "",
+    model: model || "Tiguan",
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
